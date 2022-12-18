@@ -7,42 +7,12 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="background">#212121</color>
-    <color name="accent">#873ef0</color>
+    <color name="background">#001727</color>
+    <color name="accent">#219fd5</color>
+
+    <color name="mtrl_textinput_default_box_stroke_color">#003953</color>
 
 
-<!--    Theme Colors -->
-    <color name="defaultt">#2f80ed</color>
-    <color name="transparent">#006AFF</color>
-    <color name="dark">#ffffff</color>
-    <color name="radical">#fe428e</color>
-    <color name="merko">#abd200</color>
-    <color name="gruvbox">#fabd2f</color>
-    <color name="gruvbox_light">#b57614</color>
-    <color name="tokyonight">#70a5fd</color>
-    <color name="onedark">#e4bf7a</color>
-    <color name="cobalt">#e683d9</color>
-    <color name="synthwave">#e2e9ec</color>
-    <color name="highcontrast">#e7f216</color>
-    <color name="dracula">#ff6e96</color>
-    <color name="prussian">#bddfff</color>
-
-    <integer-array name="themeColors">
-        <item>@color/defaultt</item>
-        <item>@color/transparent</item>
-        <item>@color/dark</item>
-        <item>@color/radical</item>
-        <item>@color/merko</item>
-        <item>@color/gruvbox</item>
-        <item>@color/gruvbox_light</item>
-        <item>@color/tokyonight</item>
-        <item>@color/onedark</item>
-        <item>@color/cobalt</item>
-        <item>@color/synthwave</item>
-        <item>@color/highcontrast</item>
-        <item>@color/dracula</item>
-        <item>@color/prussian</item>
-    </integer-array>
 
 
 </resources>

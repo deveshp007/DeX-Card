@@ -64,7 +64,6 @@
         android:layout_marginEnd="8dp"
         android:hint="Enter GitHub Username"
         android:textColorHint="#C2C2C2"
-        app:boxBackgroundColor="#3C3C3C"
         app:boxBackgroundMode="outline"
         app:boxStrokeColor="@color/accent"
         app:endIconMode="clear_text"
@@ -103,7 +102,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/userName"
         app:ms_arrow_tint="@color/accent"
-        app:ms_background_color="#3c3c3c"
+        app:ms_background_color="#003953"
         app:ms_dropdown_max_height="200dp"
         app:ms_text_color="#c2c2c2" />
 
@@ -127,7 +126,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:backgroundTint="#3c3c3c"
+        android:backgroundTint="#003953"
         android:text="Select"
         android:textColor="#c2c2c2"
         app:layout_constraintEnd_toEndOf="parent"
