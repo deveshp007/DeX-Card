@@ -1,2 +1,12 @@
-# DeX-Card
+
+<p align="center">
+  <img src="app/src/main/res/drawable-v24/logo.png" align="center" width="128" />
+<p>
+<h1 align="center">
+  DeX Card
+</h1>
+<p align="center">
+  App to generate stat card for your github profile with a set of customizable options. You can also copy the link of generated card and use it in github profile. 
+</p>
+
 
