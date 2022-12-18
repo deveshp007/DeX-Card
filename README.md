@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="images/logo.png" align="center" />
+  <img src="logo.png" align="center" />
 <p>
 <h1 align="center">
   DeX Card
