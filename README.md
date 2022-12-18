@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="app/src/main/res/drawable-v24/logo.png" align="center" width="128" />
+  <img src="images/logo.png" align="center" width="128" />
 <p>
 <h1 align="center">
   DeX Card
