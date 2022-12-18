@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">DeX Card</string>
     <string name="description">Generate your Github/Readme Stats Card Here</string>
+    <string name="rankNote"><b>Note</b>: Available ranks are S+ (top 1%), S (top 25%), A++ (top 45%), A+ (top 60%), and B+ (everyone).</string>
+    <string name="includeAll">Count Total Commits :\n(not only current year)</string>
 </resources>

@@ -139,7 +139,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="Add Private Commits : "
+        android:text="Add Private Commits : \n(Last Year)"
         android:textColor="@color/accent"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@id/pvtCountRG"
@@ -344,6 +344,49 @@
         android:textColor="#626262"
         app:layout_constraintBottom_toTopOf="@id/cardWidthSkBar"
         app:layout_constraintStart_toStartOf="@id/cardWidthSkBar" />
+
+    <TextView
+        android:id="@+id/txtAllCommit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/includeAll"
+        android:textColor="@color/accent"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/addAllComRG"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/addAllComRG" />
+
+    <RadioGroup
+        android:id="@+id/addAllComRG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/hideDialog"
+        app:layout_constraintStart_toEndOf="@+id/txtPvt"
+        app:layout_constraintTop_toBottomOf="@id/cardWidthSkBar">
+
+        <RadioButton
+            android:id="@+id/yesAddAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:buttonTint="@color/accent"
+            android:text="Yes"
+            android:textColor="#c2c2c2" />
+
+        <RadioButton
+            android:id="@+id/noAddAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:buttonTint="@color/accent"
+            android:checked="true"
+            android:text="No"
+            android:textColor="#c2c2c2" />
+
+    </RadioGroup>
 
 
     <com.google.android.material.button.MaterialButton

@@ -12,6 +12,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputLayout
 import com.jaredrummler.materialspinner.MaterialSpinner
 import java.lang.StringBuilder
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         val showIconRG = findViewById<RadioGroup>(R.id.showIconRG)
         val hideRankRG = findViewById<RadioGroup>(R.id.hideRankRG)
         val hideTitleRG = findViewById<RadioGroup>(R.id.hideTitleRG)
+        val addAllComRG = findViewById<RadioGroup>(R.id.addAllComRG)
         val cardWidthSkBar = findViewById<SeekBar>(R.id.cardWidthSkBar)
         val skBarValue = findViewById<TextView>(R.id.skBarValue)
 
@@ -128,12 +130,17 @@ class MainActivity : AppCompatActivity() {
 
                 }
                 .setPositiveButton("Done") { dialog, which ->
-                    for (i in checkedItems.indices) {
-                        if (checkedItems[i]) {
-                            hideItems = String.format("%s%s,", hideItems, selectedItems[i])
+                    checkedItems.forEachIndexed { i, checked ->
+                        hideItems = if (checked) {
+                            String.format("%s%s,", hideItems, selectedItems[i])
+                        } else {
+                            hideItems.replace("${selectedItems[i]},", "")
                         }
                     }
-                    Toast.makeText(this, hideItems, Toast.LENGTH_SHORT).show()
+                }
+                .setNegativeButton("Reset") { dialog, which ->
+                    hideItems = ""
+                    Arrays.fill(checkedItems, false)
                 }
             builder.show()
         }
@@ -203,16 +210,24 @@ class MainActivity : AppCompatActivity() {
                 "true"
             }
 
+            // Add all github commits ===========
+            val addAllComRBId = addAllComRG.checkedRadioButtonId
+            val addAllRb = addAllComRG.findViewById<RadioButton>(addAllComRBId)
+            val addAllCom = if (addAllRb?.text == "No") {
+                "false"
+            } else {
+                "true"
+            }
+
 
             val completeUrl =
-                "https://github-readme-stats.vercel.app/api?username=$githubId&theme=$theme&hide=$hideItems&count_private=$countPvt&show_icons=$showIcon&hide_rank=$hideRank&hide_title=$hideTitle&card_width=$cardWidth"
-
+                "https://github-readme-stats.vercel.app/api?username=$githubId&theme=$theme&hide=$hideItems&count_private=$countPvt&show_icons=$showIcon&hide_rank=$hideRank&hide_title=$hideTitle&card_width=$cardWidth&include_all_commits=$addAllCom"
 
 
             val intent = Intent(this, Cards::class.java)
             intent.putExtra("url", completeUrl)
             startActivity(intent)
-            Toast.makeText(this, "Card Generated 🎉", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Card Generated 🤖", Toast.LENGTH_SHORT).show()
         }
     }
 }
