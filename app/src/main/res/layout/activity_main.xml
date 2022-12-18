@@ -32,43 +32,65 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView" />
 
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/description"
+        android:textAlignment="center"
+        android:textColor="#c2c2c2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line" />
+
+    <View
+        android:id="@+id/line2"
+        android:layout_width="320dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="4dp"
+        android:background="@color/accent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/description" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/userName"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter GitHub Username"
-        android:layout_marginTop="16dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
-        android:enabled="true"
-        app:startIconDrawable="@drawable/ic_round_person_24"
-        app:startIconTint="@color/accent"
+        android:hint="Enter GitHub Username"
+        android:textColorHint="#C2C2C2"
         app:boxBackgroundColor="#3C3C3C"
         app:boxBackgroundMode="outline"
-        android:textColorHint="#C2C2C2"
         app:boxStrokeColor="@color/accent"
+        app:endIconMode="clear_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/line">
+        app:layout_constraintTop_toBottomOf="@id/line2"
+        app:startIconDrawable="@drawable/ic_round_person_24"
+        app:startIconTint="@color/accent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#C2C2C2"/>
+            android:textColor="#C2C2C2" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:text="Theme : "
-        android:textSize="16sp"
         android:textColor="@color/accent"
-        app:layout_constraintTop_toTopOf="@+id/spinner"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@id/spinner"
-        app:layout_constraintEnd_toStartOf="@+id/spinner"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spinner" />
 
 
     <com.jaredrummler.materialspinner.MaterialSpinner
@@ -76,44 +98,268 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/userName"
         app:ms_arrow_tint="@color/accent"
         app:ms_background_color="#3c3c3c"
-        app:ms_dropdown_max_height="150dp"
+        app:ms_dropdown_max_height="200dp"
+        app:ms_text_color="#c2c2c2" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Hide Stat : "
+        android:textColor="@color/accent"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/hideDialog"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/hideDialog" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/hideDialog"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="#3c3c3c"
+        android:text="Select"
+        android:textColor="#c2c2c2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:ms_text_color="#c2c2c2"
-        app:layout_constraintTop_toBottomOf="@+id/userName" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+
+    <TextView
+        android:id="@+id/txtPvt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Add Private Commits : "
+        android:textColor="@color/accent"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/pvtCountRG"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/pvtCountRG" />
+
+    <RadioGroup
+        android:id="@+id/pvtCountRG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/hideDialog"
+        app:layout_constraintStart_toEndOf="@+id/txtPvt"
+        app:layout_constraintTop_toBottomOf="@id/hideDialog">
+
+        <RadioButton
+            android:id="@+id/yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:buttonTint="@color/accent"
+            android:checked="true"
+            android:text="Yes"
+            android:textColor="#c2c2c2" />
+
+        <RadioButton
+            android:id="@+id/no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:buttonTint="@color/accent"
+            android:text="No"
+            android:textColor="#c2c2c2" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txtIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Show Icons : "
+        android:textColor="@color/accent"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/showIconRG"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/showIconRG" />
+
+    <RadioGroup
+        android:id="@+id/showIconRG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/hideDialog"
+        app:layout_constraintStart_toEndOf="@+id/txtPvt"
+        app:layout_constraintTop_toBottomOf="@id/pvtCountRG">
+
+        <RadioButton
+            android:id="@+id/yesShow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:buttonTint="@color/accent"
+            android:checked="true"
+            android:text="Yes"
+            android:textColor="#c2c2c2" />
+
+        <RadioButton
+            android:id="@+id/noShow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:buttonTint="@color/accent"
+            android:text="No"
+            android:textColor="#c2c2c2" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txtRank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Hide Rank : "
+        android:textColor="@color/accent"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/hideRankRG"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/hideRankRG" />
+
+    <RadioGroup
+        android:id="@+id/hideRankRG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/hideDialog"
+        app:layout_constraintStart_toEndOf="@+id/txtPvt"
+        app:layout_constraintTop_toBottomOf="@id/showIconRG">
+
+        <RadioButton
+            android:id="@+id/yesHideRank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:buttonTint="@color/accent"
+            android:text="Yes"
+            android:textColor="#c2c2c2" />
+
+        <RadioButton
+            android:id="@+id/noHideRank"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:buttonTint="@color/accent"
+            android:checked="true"
+            android:text="No"
+            android:textColor="#c2c2c2" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Hide Title : "
+        android:textColor="@color/accent"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/hideTitleRG"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/hideTitleRG" />
+
+    <RadioGroup
+        android:id="@+id/hideTitleRG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/hideDialog"
+        app:layout_constraintStart_toEndOf="@+id/txtPvt"
+        app:layout_constraintTop_toBottomOf="@id/hideRankRG">
+
+        <RadioButton
+            android:id="@+id/yesHideTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:buttonTint="@color/accent"
+            android:text="Yes"
+            android:textColor="#c2c2c2" />
+
+        <RadioButton
+            android:id="@+id/noHideTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:buttonTint="@color/accent"
+            android:checked="true"
+            android:text="No"
+            android:textColor="#c2c2c2" />
+
+    </RadioGroup>
+
+
+    <TextView
+        android:id="@+id/txtCardWidth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Card Width : "
+        android:textColor="@color/accent"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@id/cardWidthSkBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/cardWidthSkBar" />
+
+
+    <SeekBar
+        android:id="@+id/cardWidthSkBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:max="600"
+        android:min="270"
+        android:progress="300"
+        android:progressBackgroundTint="#c2c2c2"
+        android:progressTint="@color/accent"
+        android:thumbTint="@color/accent"
+        app:layout_constraintEnd_toEndOf="@id/hideDialog"
+        app:layout_constraintStart_toStartOf="@id/hideDialog"
+        app:layout_constraintTop_toBottomOf="@id/hideTitleRG" />
+
+    <TextView
+        android:id="@+id/skBarValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="300"
+        android:textColor="#626262"
+        app:layout_constraintBottom_toTopOf="@id/cardWidthSkBar"
+        app:layout_constraintStart_toStartOf="@id/cardWidthSkBar" />
+
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnGen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
-        app:cornerRadius="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@color/accent"
         android:text="Generate"
         android:textColor="@color/background"
+        app:cornerRadius="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
-
-    <ImageView
-        android:id="@+id/card"
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:backgroundTint="@color/background"
-        app:cardCornerRadius="5dp"
-        android:elevation="5dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnGen" />
-
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

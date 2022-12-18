@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DeX Card</string>
+    <string name="description">Generate your Github/Readme Stats Card Here</string>
 </resources>

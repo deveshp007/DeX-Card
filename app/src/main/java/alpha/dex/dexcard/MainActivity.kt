@@ -1,18 +1,17 @@
 package alpha.dex.dexcard
 
+
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.Toast
+import android.webkit.WebView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
-import com.bumptech.glide.Glide
-import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputLayout
 import com.jaredrummler.materialspinner.MaterialSpinner
+import java.lang.StringBuilder
 
 
 class MainActivity : AppCompatActivity() {
@@ -23,13 +22,23 @@ class MainActivity : AppCompatActivity() {
         installSplashScreen()
         setContentView(R.layout.activity_main)
 
+
+        // variable declaration ======================
+
         val userName = findViewById<TextInputLayout>(R.id.userName)
+        val btnHideDialog = findViewById<Button>(R.id.hideDialog)
         val btn = findViewById<Button>(R.id.btnGen)
-        val card = findViewById<ImageView>(R.id.card)
-        val githubId = userName.editText?.text.toString()
+        val pvtCountRG = findViewById<RadioGroup>(R.id.pvtCountRG)
+        val showIconRG = findViewById<RadioGroup>(R.id.showIconRG)
+        val hideRankRG = findViewById<RadioGroup>(R.id.hideRankRG)
+        val hideTitleRG = findViewById<RadioGroup>(R.id.hideTitleRG)
+        val cardWidthSkBar = findViewById<SeekBar>(R.id.cardWidthSkBar)
+        val skBarValue = findViewById<TextView>(R.id.skBarValue)
+
+
+        // Themes Selection Spinner ================================
+
         var theme = ""
-
-
 
         val spinner = findViewById<View>(R.id.spinner) as MaterialSpinner
         spinner.setItems(
@@ -100,22 +109,111 @@ class MainActivity : AppCompatActivity() {
             theme = "$item"
             Toast.makeText(this, "$theme theme selected", Toast.LENGTH_SHORT).show()
         }
-        val url =
-           "https://github-readme-stats.vercel.app/api?username=$githubId&show_icons=true&theme=$theme"
 
-        var links = listOf<String>("https://i.gifer.com/Lt5S.gif", "https://i.gifer.com/PPy.gif", "https://i.gifer.com/4JZ4.gif", "https://i.gifer.com/7ynw.gif", "https://i.gifer.com/xK.gif", "https://i.gifer.com/2qQQ.gif", "https://i.gifer.com/77rr.gif", "https://i.gifer.com/8qG.gif", "https://i.gifer.com/AcU9.gif", "https://i.gifer.com/6ElP.gif", "https://i.gifer.com/77rn.gif", "https://i.gifer.com/33HI.gif", "https://i.gifer.com/OSOD.gif", "https://i.gifer.com/fxk6.gif", "https://i.gifer.com/7Tzm.gif", "https://i.gifer.com/g3Ys.gif", "https://i.gifer.com/bo5.gif", "https://i.gifer.com/7TwX.gif", "https://i.gifer.com/OvZ.gif", "https://i.gifer.com/58yR.gif", "https://i.gifer.com/fxU6.gif", "https://i.gifer.com/BilS.gif", "https://i.gifer.com/LLJE.gif", "https://i.gifer.com/fxk4.gif", "https://i.gifer.com/8Wm3.gif", "https://i.gifer.com/6nOF.gif", "https://i.gifer.com/4N10.gif", "https://i.gifer.com/1zfb.gif", "https://i.gifer.com/CVb.gif", "https://i.gifer.com/AjP.gif", "https://i.gifer.com/QJFj.gif")
+
+        // Hide Stats Items =============================================
+
+        var hideItems = ""
+        val listItems = arrayOf("stars", "commits", "prs", "issues", "contribs")
+        val checkedItems = BooleanArray(listItems.size)
+        val selectedItems = mutableListOf(*listItems)
+
+        btnHideDialog.setOnClickListener() {
+            val builder = MaterialAlertDialogBuilder(this)
+
+                .setTitle("Item(s) to hide ?")
+                .setIcon(R.drawable.ic_launcher_foreground)
+                .setMultiChoiceItems(listItems, checkedItems) { dialog, which, isChecked ->
+                    checkedItems[which] = isChecked
+
+                }
+                .setPositiveButton("Done") { dialog, which ->
+                    for (i in checkedItems.indices) {
+                        if (checkedItems[i]) {
+                            hideItems = String.format("%s%s,", hideItems, selectedItems[i])
+                        }
+                    }
+                    Toast.makeText(this, hideItems, Toast.LENGTH_SHORT).show()
+                }
+            builder.show()
+        }
+        hideItems.dropLast(1)
+
+
+        // Card Width Seekbar Implementation =====================
+
+        var cardWidth = "300"
+        cardWidthSkBar.setOnSeekBarChangeListener(object :
+            SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
+                skBarValue.text = p0?.progress.toString()
+            }
+
+            override fun onStartTrackingTouch(p0: SeekBar?) {
+
+            }
+
+            override fun onStopTrackingTouch(p0: SeekBar?) {
+                cardWidth = p0?.progress.toString()
+
+            }
+        })
+
+
+        // Generate Button =================
 
         btn.setOnClickListener() {
-            val urr = links.random()
-            Glide.with(this)
-                .load(urr)
-                .into(card)
+            val githubId = userName.editText?.text.toString() // userName
+
+            // private Commit Count =====
+            val pvtCountRBId = pvtCountRG.checkedRadioButtonId
+            val pvtCountRb = pvtCountRG.findViewById<RadioButton>(pvtCountRBId)
+            val countPvt = if (pvtCountRb?.text == "Yes") {
+                "true"
+            } else {
+                "false"
+            }
+
+            // show Icons ===========
+            val showIconRBId = showIconRG.checkedRadioButtonId
+            val showIconRb = showIconRG.findViewById<RadioButton>(showIconRBId)
+            val showIcon = if (showIconRb?.text == "Yes") {
+                "true"
+            } else {
+                "false"
+            }
 
 
-            Toast.makeText(this, "Card Generated !!", Toast.LENGTH_SHORT).show()
+            // Hide Rank ===========
+            val hideRankRBId = hideRankRG.checkedRadioButtonId
+            val hideRankRb = hideRankRG.findViewById<RadioButton>(hideRankRBId)
+            val hideRank = if (hideRankRb?.text == "No") {
+                "false"
+            } else {
+                "true"
+            }
+
+
+            // Hide Title ===========
+            val hideTitleRBId = hideTitleRG.checkedRadioButtonId
+            val hideTitleRb = hideTitleRG.findViewById<RadioButton>(hideTitleRBId)
+            val hideTitle = if (hideTitleRb?.text == "No") {
+                "false"
+            } else {
+                "true"
+            }
+
+
+            val completeUrl =
+                "https://github-readme-stats.vercel.app/api?username=$githubId&theme=$theme&hide=$hideItems&count_private=$countPvt&show_icons=$showIcon&hide_rank=$hideRank&hide_title=$hideTitle&card_width=$cardWidth"
+
+
+
+            val intent = Intent(this, Cards::class.java)
+            intent.putExtra("url", completeUrl)
+            startActivity(intent)
+            Toast.makeText(this, "Card Generated 🎉", Toast.LENGTH_SHORT).show()
         }
-
-
     }
 }
 
