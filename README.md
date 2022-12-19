@@ -21,7 +21,7 @@
   <a href="https://github.com/deveshp007/DeX-Card/blob/main/LICENSE">
     <img alt="GitHub" src="https://img.shields.io/github/license/deveshp007/Dex-Card?style=for-the-badge">
   </a>
-  <img alt="release version" src="https://img.shields.io/github/v/release/deveshp007/DeX-Card?style=for-the-badge">
+  <img alt="release date" src="https://img.shields.io/github/release-date/deveshp007/DeX-Card?style=for-the-badge">
 </div>
 
 ## Screenshots
