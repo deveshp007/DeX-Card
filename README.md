@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="logo.png" align="center" width="128" height="128" />
+  <img src="images/logo.png" align="center" width="128" height="128" />
 <p>
 <h1 align="center">
   DeX Card
@@ -24,6 +24,9 @@
   <img alt="release version" src="https://img.shields.io/github/v/release/deveshp007/DeX-Card?style=for-the-badge">
 </div>
 
+## Screenshots
 
+Splash Screen|Home|Output
+![splash](images/splash.png) | ![home](images/home.png) | ![player](images/output.png)
 
 
