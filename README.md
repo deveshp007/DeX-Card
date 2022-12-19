@@ -19,7 +19,7 @@
     <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/deveshp007/DeX-Card?style=for-the-badge">
   </a>
   <a href="https://github.com/deveshp007/DeX-Card/blob/main/LICENSE">
-    <img alt="GitHub" src="https://img.shields.io/github/license/deveshp007/Dex-Card">
+    <img alt="GitHub" src="https://img.shields.io/github/license/deveshp007/Dex-Card?style=for-the-badge">
   </a>
   <img alt="Codefactor rating" src="https://img.shields.io/codefactor/grade/github/deveshp007/DeX-Card/main?style=for-the-badge">
 </div>
