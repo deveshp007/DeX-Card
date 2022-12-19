@@ -27,6 +27,7 @@
 ## Screenshots
 
 Splash Screen|Home|Output
+:-----:|:--------------:|:-----------:|
 ![splash](images/splash.png) | ![home](images/home.png) | ![player](images/output.png)
 
 
