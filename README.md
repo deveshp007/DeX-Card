@@ -30,4 +30,28 @@ Splash Screen|Home|Output
 :-----:|:--------------:|:-----------:|
 ![splash](images/splash.png) | ![home](images/home.png) | ![player](images/output.png)
 
+## Download
 
+Go to the [Releases](https://github.com/deveshp007/DeX-Card/releases) to download.
+
+Or directly [Download](https://github.com/deveshp007/DeX-Card/releases/download/v0.0.1-alpha/dex-card.apk) APK.
+
+## API
+
+For API repository (github-readme-stats) [Click Me!](https://github.com/anuraghazra/github-readme-stats) 
+
+## Tech Stack/Features
+
+- Tech Stacks:
+  - Material Design
+  - Kotlin
+  - Splash-screen(using API)
+  - Minimum SDK level 21
+
+- Customizations:
+  - Themes
+  - Hide specific stat
+  - Adding private commits
+  - Hide icons
+  - Hide ranks
+  - ...many more.
