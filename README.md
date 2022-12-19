@@ -9,8 +9,21 @@
   App to generate stats card for your github profile with a set of customizable options. You can also copy the link of generated card and use it in your github README. 
 </p>
 
-<p align="center">
-  This app is powered by <a href="https://github.com/anuraghazra/github-readme-stats">Github-readme-stats API</a>.
-</p>
+
+<div align="center">
+    <a href="https://github.com/deveshp007/DeX-Card/releases">
+
+  <img alt="Download count" src="https://img.shields.io/github/downloads/deveshp007/DeX-Card/total?style=for-the-badge">
+  </a>
+      <a href="https://github.com/deveshp007/DeX-Card/latest">
+    <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/deveshp007/DeX-Card?style=for-the-badge">
+  </a>
+  <a href="https://github.com/deveshp007/DeX-Card/blob/main/LICENSE">
+    <img alt="GitHub" src="https://img.shields.io/github/license/deveshp007/DeX-Card?style=for-the-badge">
+  </a>
+  <img alt="Codefactor rating" src="https://img.shields.io/codefactor/grade/github/deveshp007/DeX-Card/main?style=for-the-badge">
+</div>
+
+
 
 
