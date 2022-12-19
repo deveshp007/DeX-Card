@@ -14,9 +14,9 @@
         android:layout_marginStart="8dp"
         android:backgroundTint="@color/accent"
         android:src="@drawable/ic_round_arrow_back_24"
+        app:layout_constraintBottom_toBottomOf="@id/textView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/textView"
-        app:layout_constraintBottom_toBottomOf="@id/textView"/>
+        app:layout_constraintTop_toTopOf="@id/textView" />
 
     <TextView
         android:id="@+id/textView"
@@ -73,12 +73,12 @@
         android:id="@+id/note"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/rankNote"
-        android:textColor="#AEAEAE"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
+        android:text="@string/rankNote"
         android:textAlignment="center"
+        android:textColor="#AEAEAE"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/card" />
@@ -98,9 +98,72 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/shareRepo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="#00ffffff"
+        android:padding="1dp"
+        android:backgroundTint="@color/background"
+        android:elevation="0dp"
+        android:stateListAnimator="@null"
+        android:text="App Repo"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#c2c2c2"
+        app:icon="@drawable/ic_round_code_24"
+        app:iconGravity="top"
+        app:iconTint="@color/accent"
+        app:layout_constraintBottom_toTopOf="@+id/btnCopy"
+        app:layout_constraintEnd_toStartOf="@id/shareAppTxt"
+        app:layout_constraintStart_toStartOf="@id/btnCopy" />
 
 
+    <Button
+        android:id="@+id/shareAppTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/background"
+        android:background="#00ffffff"
+        android:elevation="0dp"
+        android:stateListAnimator="@null"
+        android:text="Share App"
+        android:padding="1dp"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#c2c2c2"
+        app:icon="@drawable/ic_round_ios_share_24"
+        app:iconGravity="top"
+        app:iconTint="@color/accent"
+        app:layout_constraintBottom_toTopOf="@+id/btnCopy"
+        app:layout_constraintEnd_toStartOf="@id/shareLinkTxt"
+        app:layout_constraintStart_toEndOf="@id/shareRepo" />
 
+
+    <Button
+        android:id="@+id/shareLinkTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/background"
+        android:background="#00ffffff"
+        android:elevation="0dp"
+        android:stateListAnimator="@null"
+        android:padding="1dp"
+        android:text="Share Card"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#c2c2c2"
+        app:icon="@drawable/ic_round_send_24"
+        app:iconGravity="top"
+        app:iconTint="@color/accent"
+        app:layout_constraintBottom_toTopOf="@+id/btnCopy"
+        app:layout_constraintEnd_toEndOf="@id/btnCopy"
+        app:layout_constraintStart_toEndOf="@id/shareAppTxt" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

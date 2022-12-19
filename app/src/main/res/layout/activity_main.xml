@@ -39,7 +39,7 @@
         android:layout_marginTop="4dp"
         android:text="@string/description"
         android:textAlignment="center"
-        android:textColor="#c2c2c2"
+        android:textColor="@color/textColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/line" />
@@ -63,7 +63,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:hint="Enter GitHub Username"
-        android:textColorHint="#C2C2C2"
+        android:textColorHint="@color/textColor"
         app:boxBackgroundMode="outline"
         app:boxStrokeColor="@color/accent"
         app:endIconMode="clear_text"
@@ -76,7 +76,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#C2C2C2" />
+            android:textColor="@color/textColor" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -104,7 +104,7 @@
         app:ms_arrow_tint="@color/accent"
         app:ms_background_color="#003953"
         app:ms_dropdown_max_height="200dp"
-        app:ms_text_color="#c2c2c2" />
+        app:ms_text_color="@color/textColor" />
 
 
     <TextView
@@ -128,7 +128,7 @@
         android:layout_marginEnd="8dp"
         android:backgroundTint="#003953"
         android:text="Select"
-        android:textColor="#c2c2c2"
+        android:textColor="@color/textColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
@@ -163,7 +163,7 @@
             android:buttonTint="@color/accent"
             android:checked="true"
             android:text="Yes"
-            android:textColor="#c2c2c2" />
+            android:textColor="@color/textColor" />
 
         <RadioButton
             android:id="@+id/no"
@@ -172,7 +172,7 @@
             android:layout_marginStart="4dp"
             android:buttonTint="@color/accent"
             android:text="No"
-            android:textColor="#c2c2c2" />
+            android:textColor="@color/textColor" />
 
     </RadioGroup>
 
@@ -206,7 +206,7 @@
             android:buttonTint="@color/accent"
             android:checked="true"
             android:text="Yes"
-            android:textColor="#c2c2c2" />
+            android:textColor="@color/textColor" />
 
         <RadioButton
             android:id="@+id/noShow"
@@ -215,7 +215,7 @@
             android:layout_marginStart="4dp"
             android:buttonTint="@color/accent"
             android:text="No"
-            android:textColor="#c2c2c2" />
+            android:textColor="@color/textColor" />
 
     </RadioGroup>
 
@@ -248,7 +248,7 @@
             android:layout_marginEnd="4dp"
             android:buttonTint="@color/accent"
             android:text="Yes"
-            android:textColor="#c2c2c2" />
+            android:textColor="@color/textColor" />
 
         <RadioButton
             android:id="@+id/noHideRank"
@@ -258,7 +258,7 @@
             android:buttonTint="@color/accent"
             android:checked="true"
             android:text="No"
-            android:textColor="#c2c2c2" />
+            android:textColor="@color/textColor" />
 
     </RadioGroup>
 
@@ -291,7 +291,7 @@
             android:layout_marginEnd="4dp"
             android:buttonTint="@color/accent"
             android:text="Yes"
-            android:textColor="#c2c2c2" />
+            android:textColor="@color/textColor" />
 
         <RadioButton
             android:id="@+id/noHideTitle"
@@ -301,7 +301,7 @@
             android:buttonTint="@color/accent"
             android:checked="true"
             android:text="No"
-            android:textColor="#c2c2c2" />
+            android:textColor="@color/textColor" />
 
     </RadioGroup>
 
@@ -327,7 +327,7 @@
         android:max="600"
         android:min="270"
         android:progress="300"
-        android:progressBackgroundTint="#c2c2c2"
+        android:progressBackgroundTint="@color/textColor"
         android:progressTint="@color/accent"
         android:thumbTint="@color/accent"
         app:layout_constraintEnd_toEndOf="@id/hideDialog"
@@ -373,7 +373,7 @@
             android:layout_marginEnd="4dp"
             android:buttonTint="@color/accent"
             android:text="Yes"
-            android:textColor="#c2c2c2" />
+            android:textColor="@color/textColor" />
 
         <RadioButton
             android:id="@+id/noAddAll"
@@ -383,7 +383,7 @@
             android:buttonTint="@color/accent"
             android:checked="true"
             android:text="No"
-            android:textColor="#c2c2c2" />
+            android:textColor="@color/textColor" />
 
     </RadioGroup>
 
