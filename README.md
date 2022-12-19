@@ -13,7 +13,7 @@
 <div align="center">
     <a href="https://github.com/deveshp007/DeX-Card/releases">
 
-  <img alt="Download count" src="https://img.shields.io/github/downloads/deveshp007/DeX-Card/total?style=for-the-badge">
+  <img alt="Download count" src="https://img.shields.io/github/downloads/deveshp007/DeX-Card/latest/total?style=for-the-badge">
   </a>
       <a href="https://github.com/deveshp007/DeX-Card/latest">
     <img alt="GitHub release (latest by date)" src="https://img.shields.io/github/v/release/deveshp007/DeX-Card?style=for-the-badge">
