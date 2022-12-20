@@ -51,7 +51,7 @@ class Cards : AppCompatActivity() {
         }
         shareAppTxt.setOnClickListener(){
             val intent = Intent(Intent.ACTION_SEND)
-            val url = "https://github.com/deveshp007/DeX-Card/releases/download/v0.0.1-alpha/dex-card.apk"
+            val url = "https://github.com/deveshp007/DeX-Card/releases/download/v1.1.1/dex-card.apk"
             intent.type = "text/plain"
             intent.putExtra(
                 Intent.EXTRA_TEXT,
